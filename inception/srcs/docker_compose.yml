@@ -46,10 +46,10 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: /path/to/data/mariadb
+      device: /home/cauffret/data
   wp_data:
     driver: local
     driver_opts:
       type: none
       o: bind
-      device: /path/to/data/wordpress
+      device: /home/cauffret/data
