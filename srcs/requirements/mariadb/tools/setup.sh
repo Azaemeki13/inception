@@ -39,4 +39,4 @@ done
 
 # 6. Start MariaDB in foreground as PID 1
 echo "MariaDB is ready. Starting in foreground mode."
-exec mysqld --user=mysql --bind-address=0.0.0.0
+exec mysqld --user=mysql

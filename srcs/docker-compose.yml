@@ -4,7 +4,7 @@ services:
     image: mariadb
     container_name: mariadb
     volumes:
-      - db_data:/var/lib/mysql
+      - mariadb:/var/lib/mysql
     env_file: .env
     restart: always
     networks:
@@ -17,7 +17,7 @@ services:
     depends_on:
       - mariadb
     volumes:
-      - wp_data:/var/www/html
+      - wordpress:/var/www/html
     env_file: .env
     restart: always
     networks:
@@ -35,7 +35,7 @@ services:
     ports:
       - "443:443"
     volumes:
-      - wp_data:/var/www/html
+      - wordpress:/var/www/html
     env_file: .env
     restart: always
     networks:
@@ -46,13 +46,13 @@ networks:
     driver: bridge
 
 volumes:
-  db_data:
+  mariadb:
     driver: local
     driver_opts:
       type: none
       o: bind
       device: /home/${LOGIN}/data/mariadb
-  wp_data:
+  wordpress:
     driver: local
     driver_opts:
       type: none

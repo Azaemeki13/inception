@@ -10,7 +10,7 @@ RUN mkdir -p /etc/nginx/ssl
 RUN openssl req -x509 -nodes -days 365 \
     -out /etc/nginx/ssl/inception.crt \
     -keyout /etc/nginx/ssl/inception.key \
-    -subj "/C=FR/ST=IDF/L=Paris/O=42/OU=42/CN=${LOGIN}.42.fr/UID=${LOGIN}"
+    -subj "/C=FR/ST=ML/L=Thionville/O=42/OU=42/CN=${LOGIN}.42.fr/UID=${LOGIN}"
 
 COPY conf/nginx.conf /etc/nginx/conf.d/default.conf
 
